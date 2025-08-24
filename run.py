@@ -33,12 +33,16 @@ def validate_data(values):
     """
     Validates that the user input is a list of six integers.
     """
-
+    
     try:
+        values = [int(value) for value in values]
         if len(values) != 6:
             raise ValueError(
                 f"Exactly 6 values required, you provided {len(values)}"
             )
+            
+        print(f"The data are: {values}")
+
     except ValueError as e:
         print(f"Invalid data: {e}, please try again. \n")
 
