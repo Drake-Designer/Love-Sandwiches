@@ -129,18 +129,27 @@ def calculate_stock_data(data):
 
     return new_stock_data
 
+def get_stock_values(data):
+    headings = SHEET.worksheet("sales").row_values(1)
+    stock_values = dict(zip(headings, data))
+    return stock_values
+
 
 
 def main():
     """
     Run all program functions
     """
-    #Sales data
+
+    # Welcome message for user
+    print ("Welcome to Love Sandwiches Data Automation\n")
+
+    # Sales data
     data = get_sales_data()
     sales_data = [int(num) for num in data]
     update_worksheet(sales_data, 'sales')
 
-    #Surplus data
+    # Surplus data
     new_surplus_data = calculate_surplus_data(sales_data)
     update_worksheet(new_surplus_data, 'surplus')
 
@@ -149,5 +158,10 @@ def main():
     stock_data = calculate_stock_data(sales_columns)
     update_worksheet(stock_data,'stock')
 
-print ("Welcome to Love Sandwiches Data Automation\n")
+    # Show user the next stock market
+    stock_values = get_stock_values(stock_data)
+    print("--- Make the following numbers of sandwiches for next market: ---\n")
+    for sandwich, amount in stock_values.items():
+        print(f"{sandwich}: {amount}")
+
 main()
