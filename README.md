@@ -4,8 +4,7 @@
 
 # 🥪 Love Sandwiches
 
-Love Sandwiches is a Python-based automation project that helps a fictional sandwich business manage stock more efficiently.  
-The program collects sales data, calculates surplus, and generates recommended stock levels for the next market day. All integrated with **Google Sheets** for real-time updates.
+Love Sandwiches is a Python-based automation project that helps a fictional sandwich business manage stock more efficiently. The program collects sales data, calculates surplus, and generates recommended stock levels for the next market day. All integrated with **Google Sheets** for real-time updates.
 
 ---
 
